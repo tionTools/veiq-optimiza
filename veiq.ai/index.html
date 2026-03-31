@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+    <meta property="og:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+    <meta property="og:description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/heros/mock_hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+    <meta name="twitter:description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+    <title>VEIQ - Real-time AI Intelligence for Automotive Professionals</title>
+    <link rel="icon" type="image/png" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favi3.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favi3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favi3.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favi3.png">
+    <meta name="msapplication-TileColor" content="#0057B7">
+    <meta name="msapplication-TileImage" content="assets/favi3.png">
+    <meta name="theme-color" content="#0057B7">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Set theme based on time immediately to prevent flash
+        (function() {
+            var hour = new Date().getHours();
+            // Day mode from 9:00 to 19:00, otherwise dark mode
+            var isDayTime = hour >= 9 && hour < 19;
+            var manualOverride = localStorage.getItem('theme-manual-override');
+            var savedTheme = localStorage.getItem('theme');
+            var theme = (manualOverride === 'true') ? (savedTheme || 'dark') : (isDayTime ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js"></script>
+    <script src="js/analytics.js"></script>
+</head>
+<body>
+    <!-- Dashboard Overlay -->
+    <div class="dashboard-overlay"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logos/logo_2026.png" alt="VEIQ logo" class="logo-img" style="height:44px; width:auto; vertical-align:middle;">                
+            </a>
+            <nav class="nav">
+                <!-- <a href="coming-soon.html" class="nav-link">
+                    <span style="margin-left:16px; font-size:13px; color:#bdbdbd; border-radius:5px; padding:3px 10px; letter-spacing:0.04em; vertical-align:middle; text-decoration:none; cursor:pointer; transition:opacity 0.2s; border:1px solid #d5d5d5;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'" data-i18n="nav.comingSoon">Coming Soon</span>
+                </a> -->
+                <!-- <a href="coming-soon.html" class="nav-link" data-i18n="nav.story">Story</a> -->
+                 <a href="#hero" class="nav-link" data-i18n="nav.home">Home</a>
+                 <a href="#heroAnimationSection" class="nav-link" data-i18n="nav.features">Features</a>
+                 <a href="#aiPromptSection" class="nav-link" data-i18n="nav.testimonials">AI</a>
+                <a href="#founders" class="nav-link" data-i18n="nav.about">Team</a>
+                <a href="https://app.veiq.ai" class="nav-link" target="_blank" rel="noopener noreferrer" data-i18n="nav.login">Login</a>
+            </nav>
+            
+            <div class="header-buttons">
+                <button class="btn-primary" id="openWaitlistModal" data-i18n="nav.joinWaitlist">Request Demo</button>
+                <button class="language-toggle" id="languageToggle" aria-label="Toggle language" title="Switch to Dutch / Wissel naar Nederlands" data-lang="en">
+                    <span class="language-code en-code">EN</span>
+                    <span class="language-code nl-code">NL</span>
+                </button>
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <svg class="dark-mode-icon sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="dark-mode-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-header-controls">
+                <button class="language-toggle mobile-language-toggle-header" id="mobileLanguageToggleHeader" aria-label="Toggle language" title="Switch to Dutch / Wissel naar Nederlands" data-lang="en">
+                    <span class="language-code en-code">EN</span>
+                    <span class="language-code nl-code">NL</span>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Animated Background Gradient Blobs -->
+        <div class="animated-bg-gradients">
+            <div class="bg-gradient-blob bg-gradient-blob-1"></div>
+            <div class="bg-gradient-blob bg-gradient-blob-2"></div>
+            <div class="bg-gradient-blob bg-gradient-blob-3"></div>
+        </div>
+        <div class="hero-market-ticker">
+            <div class="market-ticker-track">
+                <div class="market-ticker-item active">
+                    <i data-lucide="zap" class="ticker-icon-lucide"></i>
+                    <span class="ticker-value" data-value="612">612</span>
+                    <span class="ticker-label">deals analyzed today</span>
+                </div>
+                <div class="market-ticker-item">
+                    <i data-lucide="bar-chart-3" class="ticker-icon-lucide"></i>
+                    <span class="ticker-value" data-value="128463">128,463</span>
+                    <span class="ticker-label">listings analyzed</span>
+                </div>
+                <div class="market-ticker-item">
+                    <i data-lucide="euro" class="ticker-icon-lucide"></i>
+                    <span class="ticker-value" data-value="34.7" data-prefix="€" data-suffix="M">€34.7M</span>
+                    <span class="ticker-label">in opportunities</span>
+                </div>
+                <div class="market-ticker-item">
+                    <i data-lucide="zap" class="ticker-icon-lucide"></i>
+                    <span class="ticker-value" data-value="24">24</span>
+                    <span class="ticker-label">new deals today</span>
+                </div>
+                <div class="market-ticker-item">
+                    <i data-lucide="target" class="ticker-icon-lucide"></i>
+                    <span class="ticker-value" data-value="88" data-suffix="%">88%</span>
+                    <span class="ticker-label">match accuracy</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats-badge">
+            <div class="stats-badge-track">
+                <div class="stats-badge-item active">
+                    <i data-lucide="clock" class="stats-badge-icon-lucide"></i>
+                    <span class="stats-badge-value" data-value="7.5" data-suffix="hrs">7.5hrs</span>
+                    <span class="stats-badge-label">saved daily</span>
+                </div>
+                <div class="stats-badge-item">
+                    <i data-lucide="trending-up" class="stats-badge-icon-lucide"></i>
+                    <span class="stats-badge-value" data-value="23" data-suffix="%">+23%</span>
+                    <span class="stats-badge-label">extra profit</span>
+                </div>
+                <div class="stats-badge-item">
+                    <i data-lucide="repeat" class="stats-badge-icon-lucide"></i>
+                    <span class="stats-badge-value" data-value="40" data-suffix="%">+40%</span>
+                    <span class="stats-badge-label">more turnover</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- AI Icon with Breathing Animation (transitions into header on scroll) -->
+                <a href="#aiPromptSection" class="ai-breathing-icon hero-ai-icon" id="heroAiIcon">
+                    <div class="ai-breathing-container">
+                        <!-- Breathing glow pulse -->
+                        <div class="ai-glow-pulse ai-glow-primary"></div>
+                        <!-- Secondary subtle pulse -->
+                        <div class="ai-glow-pulse ai-glow-secondary"></div>
+                        <!-- Gradient orb background -->
+                        <div class="ai-gradient-orb"></div>
+                        <!-- Icon container with glow -->
+                        <div class="ai-icon-glow">
+                            <div class="ai-liquid-glass-icon">
+                                <img src="assets/chat_veiq_icon.png" alt="VEIQ AI" class="ai-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="hero-eyebrow">
+                    Agentic AI for Automotive Trading
+                </div>
+                <h1 class="hero-headline" data-i18n="hero.headline">Buy Better Cars. Make More, In Less Time.</h1>
+                <div class="hero-ctas">
+                    <button class="btn-hero-primary" id="openWaitlistModalHero" data-i18n="hero.seeDeals">Request Demo</button>
+                    <a href="#heroAnimationSection" class="hero-stats-preview">
+                        <div class="stats-preview-icon-wrapper">
+                            <div class="stats-preview-icon active" data-stat="time">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stats-preview-icon" data-stat="profit">
+                                <i data-lucide="trending-up" class="stats-icon-lucide"></i>
+                            </div>
+                            <div class="stats-preview-icon" data-stat="turnover">
+                                <i data-lucide="repeat" class="stats-icon-lucide"></i>
+                            </div>
+                        </div>
+                        <div class="stats-preview-carousel">
+                            <span class="stats-preview-value active" data-stat="time">8hrs → 30min</span>
+                            <span class="stats-preview-value" data-stat="profit">+23% profit</span>
+                            <span class="stats-preview-value" data-stat="turnover">+40% turnover</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="assets/heros/mock_hero.png" alt="VEIQ Platform" class="hero-main-image hero-main-image-desktop">
+                <img src="assets/heros/mock_hero_mobile.png" alt="VEIQ Platform" class="hero-main-image hero-main-image-mobile">
+            </div>
+            <div class="hero-before-after">
+                <h2 class="hero-before-after-title" data-i18n="beforeAfter.title">From problem to solution</h2>
+                <div class="before-after-comparison">
+                    <div class="before-after-item">
+                        <div class="before-after-label-number">1</div>
+                        <div class="before-after-image-wrapper">
+                            <img src="assets/heros/before.png" alt="Manual & Chaotic - Multiple car listings scattered, no clear ranking" class="before-after-image">
+                            <div class="before-after-tooltip">
+                                <div class="before-after-tooltip-mini">
+                                    <p data-i18n="beforeAfter.tooltip1Mini">Manual searching, guessing, wasting time.</p>
+                                </div>
+                                <div class="before-after-tooltip-full">
+                                    <p data-i18n="beforeAfter.tooltip1Full">Manual searching, guessing, wasting time, missing good deals. Dealers struggle with scattered listings across multiple marketplaces, no clear ranking, and decision overload.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="before-after-divider">
+                        <i data-lucide="arrow-right" class="before-after-arrow"></i>
+                    </div>
+                    
+                    <div class="before-after-item">
+                        <div class="before-after-label-number">2</div>
+                        <div class="before-after-image-wrapper">
+                            <img src="assets/heros/after.png" alt="Clear & Ranked - One ranked list of vehicle opportunities, best deals highlighted" class="before-after-image">
+                            <div class="before-after-tooltip">
+                                <div class="before-after-tooltip-mini">
+                                    <p data-i18n="beforeAfter.tooltip2Mini">AI ranks the best deals automatically.</p>
+                                </div>
+                                <div class="before-after-tooltip-full">
+                                    <p data-i18n="beforeAfter.tooltip2Full">AI ranks the best deals automatically. Action-ready clarity with one ranked list of vehicle opportunities, each deal clearly scored by margin, rotation speed, and fit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="before-after-plus">
+                        <i data-lucide="plus" class="before-after-plus-icon"></i>
+                    </div>
+                    
+                    <div class="before-after-item">
+                        <div class="before-after-label-number">3</div>
+                        <div class="before-after-image-wrapper">
+                            <img src="assets/heros/after2.png" alt="VEIQ Platform" class="before-after-image">
+                            <div class="before-after-tooltip">
+                                <div class="before-after-tooltip-mini">
+                                    <p data-i18n="beforeAfter.tooltip3Mini">VEIQ's intelligent platform transforms automotive trading.</p>
+                                </div>
+                                <div class="before-after-tooltip-full">
+                                    <p data-i18n="beforeAfter.tooltip3Full">VEIQ's intelligent platform delivers real-time market intelligence and automated execution, transforming how dealers source and acquire vehicles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Hero Expansion Section -->
+    <section class="hero-animation-section" id="heroAnimationSection">
+        <div class="hero-animation-container">
+            <div class="hero-animation-images-wrapper">
+                <div class="hero-animation-image-wrapper">
+                    <img src="assets/heros/2026_2.png" alt="VEIQ Platform" class="hero-animation-image">
+                </div>
+                <div class="hero-animation-image-wrapper">
+                    <img src="assets/heros/1.png" alt="VEIQ Platform" class="hero-animation-image">
+                </div>
+            </div>
+            <div class="hero-animation-usps">
+                <div class="hero-animation-usp-item" data-usp-index="0">
+                    <i data-lucide="search-x" class="usp-icon"></i>
+                    <span data-i18n="hero.usp1Verbose">Deals come to you: no more searching</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp1Detail">
+                        <p>Stop wasting hours scrolling through listings. VEIQ's AI continuously monitors the market and delivers the best deals directly to you. Get instant notifications when vehicles matching your criteria appear, so you never miss an opportunity.</p>
+                    </div>
+                </div>
+                <div class="hero-animation-usp-item" data-usp-index="1">
+                    <i data-lucide="clock" class="usp-icon"></i>
+                    <span data-i18n="hero.usp2Verbose">Spend minutes, not hours, finding cars</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp2Detail">
+                        <p>What used to take hours of manual research now takes minutes. Our intelligent system analyzes thousands of listings, prices, and market trends in real-time, giving you actionable insights instantly. Focus on closing deals, not searching for them.</p>
+                    </div>
+                </div>
+                <div class="hero-animation-usp-item" data-usp-index="2">
+                    <i data-lucide="trending-up" class="usp-icon"></i>
+                    <span data-i18n="hero.usp3Verbose">Make more profit per car</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp3Detail">
+                        <p>Make smarter buying decisions with real-time market intelligence. See exactly what each vehicle is worth, its profit potential, and how fast it will sell. Buy at the right price and maximize your margins on every transaction.</p>
+                    </div>
+                </div>
+                <div class="hero-animation-usp-item" data-usp-index="3">
+                    <i data-lucide="zap" class="usp-icon"></i>
+                    <span data-i18n="hero.usp4Verbose">Buy cars that sell faster</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp4Detail">
+                        <p>Reduce inventory risk by focusing on high-demand vehicles. Our system shows you rotation days, demand signals, and liquidity indicators for every vehicle, helping you build a portfolio that turns over quickly and generates consistent cash flow.</p>
+                    </div>
+                </div>
+                <div class="hero-animation-usp-item" data-usp-index="4">
+                    <i data-lucide="shield-check" class="usp-icon"></i>
+                    <span data-i18n="hero.usp5Verbose">Avoid slow and risky stock</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp5Detail">
+                        <p>Identify problematic inventory before you buy. Get clear risk indicators and demand signals for every vehicle, so you can avoid cars that will sit on your lot for months. Protect your capital and maintain healthy inventory turnover.</p>
+                    </div>
+                </div>
+                <div class="hero-animation-usp-item" data-usp-index="5">
+                    <i data-lucide="rocket" class="usp-icon"></i>
+                    <span data-i18n="hero.usp6Verbose">Act faster than other dealers</span>
+                    <div class="usp-detail-card" data-i18n="hero.usp6Detail">
+                        <p>Get first access to the best deals with instant alerts delivered via email, SMS, or WhatsApp. When a high-value opportunity appears, you'll know immediately and can act before your competitors even see it. Speed wins in this market.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="hero-animation-cta">
+                <button class="btn-hero-ai" id="scrollToAIPrompt">
+                    <img src="assets/chat_veiq_icon.png" alt="VEIQ AI" class="btn-hero-ai-icon">
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section id="testimonials" class="testimonials-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="testimonials.title">Trusted by Automotive Professionals</h2>
+            
+            <div class="testimonials-stats">
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-value">23%</div>
+                    <div class="testimonial-stat-label" data-i18n="testimonials.stat1">Average Profit Increase</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-value">40%</div>
+                    <div class="testimonial-stat-label" data-i18n="testimonials.stat2">Faster Inventory Turnover</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-value">8hrs → 30min</div>
+                    <div class="testimonial-stat-label" data-i18n="testimonials.stat3">Time Saved Daily</div>
+                </div>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <blockquote class="testimonial-quote" data-i18n="testimonials.quote1">
+                        "VEIQ transformed how vehicles are sourced. Profit margins increased 23% and opportunities aren't missed."
+                    </blockquote>
+                </div>
+                
+                <div class="testimonial-card">
+                    <blockquote class="testimonial-quote" data-i18n="testimonials.quote2">
+                        "Reduced search time from 8 hours to 30 minutes. The AI matching is incredible."
+                    </blockquote>
+                </div>
+                
+                <div class="testimonial-card">
+                    <blockquote class="testimonial-quote" data-i18n="testimonials.quote3">
+                        "Real data replaced gut feeling. Inventory turnover improved 40%, and slow-moving stock is avoided."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Hero USPs for Mobile (before chat demo) -->
+    <section class="hero-usps-mobile-section">
+        <div class="section-container">
+            <div class="hero-usps-mobile-only">
+                <div class="hero-usps-list">
+                    <div class="usp-item hero-usp-clickable" data-usp-index="0" data-i18n="hero.usp1">
+                        <i data-lucide="search-x" class="usp-icon"></i>
+                        <span class="usp-text-short">No more manual searching</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp1Verbose">Deals come to you: no more searching</span>
+                    </div>
+                    <div class="usp-item hero-usp-clickable" data-usp-index="1" data-i18n="hero.usp2">
+                        <i data-lucide="clock" class="usp-icon"></i>
+                        <span class="usp-text-short">Spend minutes, not hours</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp2Verbose">Spend minutes, not hours, finding cars</span>
+                    </div>
+                    <div class="usp-item hero-usp-clickable" data-usp-index="2" data-i18n="hero.usp3">
+                        <i data-lucide="trending-up" class="usp-icon"></i>
+                        <span class="usp-text-short">Make more profit per car</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp3Verbose">Make more profit per car</span>
+                    </div>
+                    <div class="usp-item hero-usp-clickable" data-usp-index="3" data-i18n="hero.usp4">
+                        <i data-lucide="zap" class="usp-icon"></i>
+                        <span class="usp-text-short">Buy cars that sell faster</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp4Verbose">Buy cars that sell faster</span>
+                    </div>
+                    <div class="usp-item hero-usp-clickable" data-usp-index="4" data-i18n="hero.usp5">
+                        <i data-lucide="shield-check" class="usp-icon"></i>
+                        <span class="usp-text-short">Avoid slow and risky stock</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp5Verbose">Avoid slow and risky stock</span>
+                    </div>
+                    <div class="usp-item hero-usp-clickable" data-usp-index="5" data-i18n="hero.usp6">
+                        <i data-lucide="rocket" class="usp-icon"></i>
+                        <span class="usp-text-short">Get deals faster than others</span>
+                        <span class="usp-text-verbose" data-i18n="hero.usp6Verbose">Act faster than other dealers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Prompt Section (Standalone) -->
+    <section class="ai-prompt-section" id="aiPromptSection">
+        <div class="section-container">
+            <div class="ai-prompt-standalone-box">
+                <div class="ai-prompt-standalone-container">
+                    <div class="ai-prompt-standalone-header">
+                        <!-- AI Breathing Icon inside chat -->
+                        <div class="ai-breathing-icon ai-chat-icon">
+                            <div class="ai-breathing-container">
+                                <div class="ai-glow-pulse ai-glow-primary"></div>
+                                <div class="ai-glow-pulse ai-glow-secondary"></div>
+                                <div class="ai-gradient-orb"></div>
+                                <div class="ai-icon-glow">
+                                    <div class="ai-liquid-glass-icon">
+                                        <img src="assets/chat_veiq_icon.png" alt="VEIQ AI" class="ai-icon-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ai-prompt-standalone-input-wrapper">
+                            <input type="text" class="ai-prompt-standalone-input" data-i18n-placeholder="ai.placeholder" placeholder="Ask VEIQ AI anything..." disabled />
+                        </div>
+                        <button class="ai-prompt-standalone-submit">
+                            <svg width="24" height="24" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 3L9 15M9 3L3 9M9 3L15 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="ai-prompt-standalone-expanded">
+                        <div class="ai-chat-demo-messages" id="aiChatDemoMessages">
+                            <!-- Messages will be inserted here -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="founders-section founders-section-compact">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="team.title">Team</h2>
+            <div class="founders-grid">
+                <div class="founder-card-compact">
+                    <a href="https://www.linkedin.com/in/arvin-esterabadi-b283a1166/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact">
+                        <img src="assets/team/arvin2.png" alt="Arvin Esterabadi" class="founder-image">
+                    </a>
+                    <h3 class="founder-name-compact">Arvin Esterabadi</h3>
+                    <span class="founder-role-compact" data-i18n="team.ceo">Founder & CEO</span>
+                    <p class="founder-bio-visible" data-i18n="team.arvin.bio1">Serial entrepreneur with 12+ years of experience across automotive, mobility trading, e-commerce, re-commerce, and technology platforms.</p>
+                    <div class="founder-bio-popup">
+                        <p data-i18n="team.arvin.bio2">Arvin has spent his career close to the market, working with vehicle inventory, pricing, sourcing, and digital trading flows. He combines hands-on operational experience with a strong understanding of how technology can simplify complex decisions in mobility and trade.</p>
+                        <a href="https://www.linkedin.com/in/arvin-esterabadi-b283a1166/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+                
+                <div class="founder-card-compact">
+                    <a href="https://www.linkedin.com/in/christian-behn/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact">
+                        <img src="assets/team/chris.jpeg" alt="Christian Behn" class="founder-image">
+                    </a>
+                    <h3 class="founder-name-compact">Christian Behn</h3>
+                    <span class="founder-role-compact" data-i18n="team.cfo">Founder & CFO</span>
+                    <p class="founder-bio-visible" data-i18n="team.christian.bio1">Background in building and scaling tech companies across finance, SaaS, and platform businesses.</p>
+                    <div class="founder-bio-popup">
+                        <p data-i18n="team.christian.bio2">Christian has worked closely with founders and leadership teams on financial strategy, fundraising, and scale-up operations. His experience spans complex transactional models and high-growth environments, where solid financial architecture and operational discipline are critical.</p>
+                        <a href="https://www.linkedin.com/in/christian-behn/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+                
+                <div class="founder-card-compact">
+                    <a href="https://www.linkedin.com/in/marc-abels/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact">
+                        <img src="assets/team/marc2.jpeg" alt="Marc Abels" class="founder-image">
+                    </a>
+                    <h3 class="founder-name-compact">Marc Abels</h3>
+                    <span class="founder-role-compact" data-i18n="team.cto">Founder & CTO</span>
+                    <p class="founder-bio-visible" data-i18n="team.marc.bio1">Background in software engineering, data, and applied AI, with experience across investing and technology-driven companies.</p>
+                    <div class="founder-bio-popup">
+                        <p data-i18n="team.marc.bio2">Marc has worked hands-on with complex datasets, building data systems and intelligence layers that support real operational decisions. With a foundation in Physics and applied AI, he brings a structured, analytical approach to product and system design.</p>
+                        <a href="https://www.linkedin.com/in/marc-abels/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+                
+                <div class="founder-card-compact">
+                    <a href="https://www.linkedin.com/in/machiel-tiddens-ceo/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact">
+                        <img src="assets/team/machiel.jpeg" alt="Machiel Tiddens" class="founder-image">
+                    </a>
+                    <h3 class="founder-name-compact">Machiel Tiddens</h3>
+                    <span class="founder-role-compact" data-i18n="team.commercialLead">Commercial Lead</span>
+                    <p class="founder-bio-visible" data-i18n="team.machiel.bio1">Over a decade of leadership experience across digital platforms and large-scale e-commerce environments.</p>
+                    <div class="founder-bio-popup">
+                        <p data-i18n="team.machiel.bio2">Machiel has led and scaled complex organizations, including serving as CEO of a high-growth marketplace business and holding senior roles within major consumer and retail platforms.</p>
+                        <a href="https://www.linkedin.com/in/machiel-tiddens-ceo/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+                
+                <div class="founder-card-compact">
+                    <a href="https://www.linkedin.com/in/jingwei-ren-5824a948/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact">
+                        <img src="assets/team/jing2.jpeg" alt="Jingwei Ren" class="founder-image">
+                    </a>
+                    <h3 class="founder-name-compact">Jingwei Ren</h3>
+                    <span class="founder-role-compact" data-i18n="team.uxLead">UX Lead</span>
+                    <p class="founder-bio-visible" data-i18n="team.jingwei.bio1">Background in product, service design, and user-centered system development.</p>
+                    <div class="founder-bio-popup">
+                        <p data-i18n="team.jingwei.bio2">Jingwei has worked on designing and shaping digital platforms where complexity needs to be translated into clarity for end users. With a foundation in interaction design, he focuses on how people actually use systems in practice.</p>
+                        <a href="https://www.linkedin.com/in/jingwei-ren-5824a948/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advisors Section -->
+            <div class="advisors-section-compact">
+                <h3 class="advisors-title" data-i18n="team.advisorsTitle">Advisors</h3>
+                <div class="advisors-grid">
+                    <div class="founder-card-compact advisor-card-compact">
+                        <a href="https://www.linkedin.com/in/martin-f-herrmann-995619/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact advisor-headshot-compact">
+                            <img src="assets/team/martin.jpeg" alt="Martin Herrmann" class="founder-image">
+                        </a>
+                        <h4 class="founder-name-compact">Martin Herrmann</h4>
+                        <span class="founder-role-compact">Strategic Advisor</span>
+                        <p class="founder-bio-visible">Former CEO / COO in energy & infrastructure. Board member and mentor to high-growth startups across Europe.</p>
+                        <a href="https://www.linkedin.com/in/martin-f-herrmann-995619/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                    
+                    <div class="founder-card-compact advisor-card-compact">
+                        <a href="https://www.linkedin.com/in/alper-t-042209107/" target="_blank" rel="noopener noreferrer" class="founder-headshot-compact advisor-headshot-compact">
+                            <img src="assets/team/alper.jpeg" alt="Alper Topcuoglu" class="founder-image">
+                        </a>
+                        <h4 class="founder-name-compact">Alper Topcuoglu</h4>
+                        <span class="founder-role-compact">Strategic Tech Advisor</span>
+                        <p class="founder-bio-visible">Senior technologist. Data engineering, data architecture, big data platforms, ML pipelines, LLM & AI infrastructure. Startups to enterprise scale.</p>
+                        <a href="https://www.linkedin.com/in/alper-t-042209107/" target="_blank" rel="noopener noreferrer" class="founder-link-compact">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & How It Works Combined Section -->
+    <section class="vision-works-section" id="howWorksSection">
+        <div class="section-container">
+            <div class="vision-works-header">
+                <h2 class="vision-works-title">Our Vision</h2>
+                <p class="vision-works-subtitle">To become the intelligence and autonomous execution leader for the global automotive market.</p>
+            </div>
+            
+            <!-- Centered AI Breathing Icon -->
+            <div class="ai-breathing-icon vision-ai-icon">
+                <div class="ai-breathing-container">
+                    <div class="ai-glow-pulse ai-glow-primary"></div>
+                    <div class="ai-glow-pulse ai-glow-secondary"></div>
+                    <div class="ai-gradient-orb"></div>
+                    <div class="ai-icon-glow">
+                        <div class="ai-liquid-glass-icon">
+                            <img src="assets/chat_veiq_icon.png" alt="VEIQ AI" class="ai-icon-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-main-container">
+                <div class="footer-column-brand">
+                    <h3 class="footer-brand-title" data-i18n="footer.tagline">Bringing agentic AI</h3>
+                    <p class="footer-brand-subtitle" data-i18n="footer.taglineSub">to automotive trading</p>
+                    <a href="#" class="footer-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                        <img src="assets/logos/logo_2026.png" alt="VEIQ" class="footer-logo-img">
+                    </a>
+                </div>
+                
+                <div class="footer-column-links">
+                    <h4 class="footer-column-title" data-i18n="footer.productCompany">Product / Company</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#heroAnimationSection" class="footer-link" data-i18n="nav.features">Features</a></li>
+                        <li><a href="#hero" class="footer-link" data-i18n="nav.story">Story</a></li>
+                        <li><a href="#founders" class="footer-link" data-i18n="nav.about">About</a></li>
+                        <li><a href="#founders" class="footer-link" data-i18n="team.title">Team</a></li>
+                        <li><a href="https://www.linkedin.com/in/arvin-esterabadi-b283a1166/" target="_blank" rel="noopener noreferrer" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column-social">
+                    <h4 class="footer-column-title" data-i18n="footer.followUs">Follow Us</h4>
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/arvin-esterabadi-b283a1166/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="footer-social-icon">
+                                    <path d="M2.33333 2.33333L11.6667 11.6667M11.6667 2.33333L2.33333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>X.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/arvin-esterabadi-b283a1166/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="footer-social-icon">
+                                    <rect x="2" y="2" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                                    <circle cx="5" cy="5" r="0.8" fill="currentColor"/>
+                                    <path d="M4 9.33333V6M7 9.33333V7.33333C7 6.78105 7.44772 6.33333 8 6.33333C8.55228 6.33333 9 6.78105 9 7.33333V9.33333" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <span class="footer-copyright" data-i18n="footer.copyright">© 2026 VEIQ. All rights reserved.</span>
+                <div class="footer-legal-links">
+                    <a href="#privacy" class="footer-legal-link" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#terms" class="footer-legal-link" data-i18n="footer.terms">Terms of Services</a>
+                    <a href="#imprint" class="footer-legal-link" data-i18n="footer.imprint">Imprint</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div class="waitlist-modal" id="waitlistModal">
+        <div class="waitlist-modal-overlay" id="waitlistModalOverlay"></div>
+        <div class="waitlist-modal-content">
+            <button class="waitlist-modal-close" id="closeWaitlistModal" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <div class="waitlist-modal-header">
+                <h2 data-i18n="waitlist.title">Request Demo</h2>
+                <p data-i18n="waitlist.description">Get a personalized demo of VEIQ's AI-powered automotive intelligence.</p>
+            </div>
+
+            <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xdkjnrdq" method="POST">
+                <div class="waitlist-field">
+                    <input 
+                        id="waitlist-company" 
+                        name="company" 
+                        type="text" 
+                        data-i18n-placeholder="waitlist.companyPlaceholder"
+                        placeholder="Your Company Name" 
+                        required 
+                        autocomplete="organization"
+                    />
+                </div>
+
+                <div class="waitlist-field">
+                    <input 
+                        id="waitlist-email" 
+                        name="email" 
+                        type="email" 
+                        data-i18n-placeholder="waitlist.emailPlaceholder"
+                        placeholder="your.email@company.com" 
+                        required 
+                        autocomplete="email"
+                    />
+                </div>
+
+                <div class="waitlist-field">
+                    <input 
+                        id="waitlist-phone" 
+                        name="phone" 
+                        type="tel" 
+                        data-i18n-placeholder="waitlist.phonePlaceholder"
+                        placeholder="+31 6 12 34 56 78" 
+                        required 
+                        autocomplete="tel"
+                    />
+                </div>
+
+                <button type="submit" class="waitlist-submit-btn" id="waitlistSubmitBtn" data-i18n="waitlist.submit">
+                    Request Demo
+                </button>
+
+                <p class="waitlist-form-note" id="waitlistFormNote" data-i18n="waitlist.note">
+                    We'll never share your details. We'll be in touch soon to schedule your demo.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
