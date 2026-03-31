@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta
+      name="description"
+      content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data-so dealers buy better cars and make more, in less time."
+    >
+    <meta property="og:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+    <meta
+      property="og:description"
+      content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data-so dealers buy better cars and make more, in less time."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/heros/mock_hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+    <meta
+      name="twitter:description"
+      content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data-so dealers buy better cars and make more, in less time."
+    >
+    <title>VEIQ - Real-time AI Intelligence for Automotive Professionals</title>
     <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <meta name="theme-color" content="#0057B7">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    >
+    <script>
+      (function () {
+        var hour = new Date().getHours();
+        var manualOverride = localStorage.getItem('theme-manual-override');
+        var savedTheme = localStorage.getItem('theme');
+        var isDayTime = hour >= 7 && hour < 21;
+        var theme = manualOverride === 'true' ? (savedTheme || 'dark') : (isDayTime ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVJ4NZCDS4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-HVJ4NZCDS4');
+
+      window.trackEvent = function (category, action, label, value) {
+        if (typeof gtag !== 'function') {
+          return;
+        }
+
+        var params = {
+          event_category: category,
+          event_action: action,
+        };
+
+        if (label) {
+          params.event_label = label;
+        }
+
+        if (value != null) {
+          params.value = value;
+        }
+
+        gtag('event', action, params);
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
     <div id="app"></div>
