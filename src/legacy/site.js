@@ -1,3 +1,4 @@
+export function initLandingInteractions() {
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById("darkModeToggle");
 const htmlElement = document.documentElement;
@@ -3331,3 +3332,4 @@ if (document.readyState === "loading") {
 }
 
 console.log("VEIQ landing page loaded successfully 🚗");
+}
