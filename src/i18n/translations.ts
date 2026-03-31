@@ -1,0 +1,202 @@
+export type Lang = 'en' | 'nl'
+
+export const translations: Record<Lang, Record<string, string>> = {
+  en: {
+    'nav.comingSoon': 'Coming Soon',
+    'nav.features': 'Features',
+    'nav.story': 'Story',
+    'nav.about': 'About',
+    'nav.home': 'Home',
+    'nav.login': 'Login',
+    'nav.joinWaitlist': 'Request Demo',
+
+    'hero.badge': 'Early access',
+    'hero.headline': 'Buy Better Cars. Make More, In Less Time.',
+    'hero.subheadline': 'The market comes to you.',
+    'hero.seeDeals': 'Request Demo',
+    'hero.statsPreview': 'Time saved daily',
+    'hero.uspsLabel': 'What dealers get',
+    'hero.usp1': 'No manual searching',
+    'hero.usp2': 'Minutes, not hours',
+    'hero.usp3': 'More profit per car',
+    'hero.usp4': 'Faster selling cars',
+    'hero.usp5': 'No slow (risky) stock',
+    'hero.usp6': 'Deals before others',
+    'hero.usp1Verbose': 'Deals come to you: no more searching',
+    'hero.usp2Verbose': 'Spend minutes, not hours, finding cars',
+    'hero.usp3Verbose': 'Make more profit per car',
+    'hero.usp4Verbose': 'Buy cars that sell faster',
+    'hero.usp5Verbose': 'Avoid slow and risky stock',
+    'hero.usp6Verbose': 'Act faster than other dealers',
+    'hero.usp1Detail':
+      '<p>Stop wasting hours scrolling through listings. VEIQ\'s AI continuously monitors the market and delivers the best deals directly to you. Get instant notifications when vehicles matching your criteria appear, so you never miss an opportunity.</p>',
+    'hero.usp2Detail':
+      '<p>What used to take hours of manual research now takes minutes. Our intelligent system analyzes thousands of listings, prices, and market trends in real-time, giving you actionable insights instantly. Focus on closing deals, not searching for them.</p>',
+    'hero.usp3Detail':
+      '<p>Make smarter buying decisions with real-time market intelligence. See exactly what each vehicle is worth, its profit potential, and how fast it will sell. Buy at the right price and maximize your margins on every transaction.</p>',
+    'hero.usp4Detail':
+      '<p>Reduce inventory risk by focusing on high-demand vehicles. Our system shows you rotation days, demand signals, and liquidity indicators for every vehicle, helping you build a portfolio that turns over quickly and generates consistent cash flow.</p>',
+    'hero.usp5Detail':
+      '<p>Identify problematic inventory before you buy. Get clear risk indicators and demand signals for every vehicle, so you can avoid cars that will sit on your lot for months. Protect your capital and maintain healthy inventory turnover.</p>',
+    'hero.usp6Detail':
+      '<p>Get first access to the best deals with instant alerts delivered via email, SMS, or WhatsApp. When a high-value opportunity appears, you\'ll know immediately and can act before your competitors even see it. Speed wins in this market.</p>',
+
+    'beforeAfter.title': 'From problem to solution',
+    'beforeAfter.tooltip1Mini': 'Manual searching, guessing, wasting time.',
+    'beforeAfter.tooltip1Full':
+      'Manual searching, guessing, wasting time, missing good deals. Dealers struggle with scattered listings across multiple marketplaces, no clear ranking, and decision overload.',
+    'beforeAfter.tooltip2Mini': 'AI ranks the best deals automatically.',
+    'beforeAfter.tooltip2Full':
+      'AI ranks the best deals automatically. Action-ready clarity with one ranked list of vehicle opportunities, each deal clearly scored by margin, rotation speed, and fit.',
+    'beforeAfter.tooltip3Mini': "VEIQ's intelligent platform transforms automotive trading.",
+    'beforeAfter.tooltip3Full':
+      "VEIQ's intelligent platform delivers real-time market intelligence and automated execution, transforming how dealers source and acquire vehicles.",
+
+    'team.title': 'Team',
+    'team.ceo': 'Founder & CEO',
+    'team.cfo': 'Founder & CFO',
+    'team.cto': 'Founder & CTO',
+    'team.commercialLead': 'Commercial Lead',
+    'team.uxLead': 'UX Lead',
+    'team.advisorsTitle': 'Advisors',
+    'team.linkedin': 'LinkedIn →',
+    'team.arvin.bio1':
+      'Serial entrepreneur with 12+ years of experience across automotive, mobility trading, e-commerce, re-commerce, and technology platforms.',
+    'team.arvin.bio2':
+      'Arvin has spent his career close to the market, working with vehicle inventory, pricing, sourcing, and digital trading flows. He combines hands-on operational experience with a strong understanding of how technology can simplify complex decisions in mobility and trade.',
+    'team.christian.bio1':
+      'Background in building and scaling tech companies across finance, SaaS, and platform businesses.',
+    'team.christian.bio2':
+      'Christian has worked closely with founders and leadership teams on financial strategy, fundraising, and scale-up operations. His experience spans complex transactional models and high-growth environments, where solid financial architecture and operational discipline are critical.',
+    'team.marc.bio1':
+      'Background in software engineering, data, and applied AI, with experience across investing and technology-driven companies.',
+    'team.marc.bio2':
+      'Marc has worked hands-on with complex datasets, building data systems and intelligence layers that support real operational decisions. With a foundation in Physics and applied AI, he brings a structured, analytical approach to product and system design.',
+    'team.machiel.bio1':
+      'Over a decade of leadership experience across digital platforms and large-scale e-commerce environments.',
+    'team.machiel.bio2':
+      'Machiel has led and scaled complex organizations, including serving as CEO of a high-growth marketplace business and holding senior roles within major consumer and retail platforms.',
+    'team.jingwei.bio1': 'Background in product, service design, and user-centered system development.',
+    'team.jingwei.bio2':
+      'Jingwei has worked on designing and shaping digital platforms where complexity needs to be translated into clarity for end users. With a foundation in interaction design, he focuses on how people actually use systems in practice.',
+
+    'footer.tagline': 'Bringing agentic AI',
+    'footer.taglineSub': 'to automotive trading',
+    'footer.productCompany': 'Product / Company',
+    'footer.followUs': 'Follow Us',
+    'footer.copyright': '© 2026 VEIQ. All rights reserved.',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Services',
+    'footer.imprint': 'Imprint',
+
+    'waitlist.title': 'Request Demo',
+    'waitlist.description': "Get a personalized demo of VEIQ's AI-powered automotive intelligence.",
+    'waitlist.companyPlaceholder': 'Your Company Name',
+    'waitlist.emailPlaceholder': 'your.email@company.com',
+    'waitlist.phonePlaceholder': '+31 6 12 34 56 78',
+    'waitlist.submit': 'Request Demo',
+    'waitlist.note': "We'll never share your details. We'll be in touch soon to schedule your demo.",
+
+    'ai.placeholder': 'Ask Marvin anything...',
+  },
+  nl: {
+    'nav.comingSoon': 'Binnenkort',
+    'nav.features': 'Functies',
+    'nav.story': 'Verhaal',
+    'nav.about': 'Over',
+    'nav.home': 'Home',
+    'nav.login': 'Inloggen',
+    'nav.joinWaitlist': 'Demo aanvragen',
+
+    'hero.badge': 'Vroege toegang',
+    'hero.headline': 'Koop Betere Auto\'s. Verdien Meer, In Minder Tijd.',
+    'hero.subheadline': 'De markt komt naar jou toe.',
+    'hero.seeDeals': 'Krijg vroege toegang',
+    'hero.statsPreview': 'Tijd bespaard dagelijks',
+    'hero.uspsLabel': 'Wat dealers krijgen',
+    'hero.usp1': 'Niets handmatig',
+    'hero.usp2': 'Minuten, geen uren',
+    'hero.usp3': 'Meer winst per auto',
+    'hero.usp4': 'Snel lopende auto\'s',
+    'hero.usp5': 'Geen trage voorraad',
+    'hero.usp6': 'Deals vóór anderen',
+    'hero.usp1Verbose': 'Deals komen naar jou toe: geen zoeken meer',
+    'hero.usp2Verbose': 'Besteed minuten, niet uren, met het vinden van auto\'s',
+    'hero.usp3Verbose': 'Maak meer winst per auto',
+    'hero.usp4Verbose': 'Koop auto\'s die sneller verkopen',
+    'hero.usp5Verbose': 'Vermijd trage en risicovolle voorraad',
+    'hero.usp6Verbose': 'Handel sneller dan andere dealers',
+    'hero.usp1Detail':
+      '<p>Stop met urenlang door advertenties scrollen. De AI van VEIQ monitort continu de markt en levert de beste deals direct aan jou.</p>',
+    'hero.usp2Detail':
+      '<p>Wat vroeger uren handmatig onderzoek kostte, kost nu minuten. Ons intelligente systeem analyseert duizenden advertenties, prijzen en markttrends in real-time.</p>',
+    'hero.usp3Detail':
+      '<p>Maak slimmere koopbeslissingen met real-time marktintelligentie. Zie precies wat elk voertuig waard is, het winstpotentieel en hoe snel het zal verkopen.</p>',
+    'hero.usp4Detail':
+      '<p>Verminder voorraadrisico door te focussen op voertuigen met hoge vraag. Ons systeem toont je rotatiedagen, vraagsignalen en liquiditeitsindicatoren voor elk voertuig.</p>',
+    'hero.usp5Detail':
+      '<p>Identificeer problematische voorraad voordat je koopt. Krijg duidelijke risico-indicatoren en vraagsignalen voor elk voertuig.</p>',
+    'hero.usp6Detail':
+      '<p>Krijg als eerste toegang tot de beste deals met directe meldingen via e-mail, SMS of WhatsApp. Wanneer een hoogwaardige kans verschijnt, weet je het direct.</p>',
+
+    'beforeAfter.title': 'Van probleem naar oplossing',
+    'beforeAfter.tooltip1Mini': 'Handmatig zoeken, gissen, tijd verspillen.',
+    'beforeAfter.tooltip1Full':
+      'Handmatig zoeken, gissen, tijd verspillen, goede deals missen. Dealers worstelen met verspreide advertenties over meerdere marktplaatsen.',
+    'beforeAfter.tooltip2Mini': 'AI rangschikt automatisch de beste deals.',
+    'beforeAfter.tooltip2Full':
+      'AI rangschikt automatisch de beste deals. Actie-klare duidelijkheid met één gerangschikte lijst van voertuigkansen.',
+    'beforeAfter.tooltip3Mini': "VEIQ's intelligente platform transformeert automotive trading.",
+    'beforeAfter.tooltip3Full':
+      "VEIQ's intelligente platform levert real-time marktintelligentie en geautomatiseerde uitvoering.",
+
+    'team.title': 'Team',
+    'team.ceo': 'Founder & CEO',
+    'team.cfo': 'Founder & CFO',
+    'team.cto': 'Founder & CTO',
+    'team.commercialLead': 'Commercieel Leider',
+    'team.uxLead': 'UX Lead',
+    'team.advisorsTitle': 'Adviseurs',
+    'team.linkedin': 'LinkedIn →',
+    'team.arvin.bio1':
+      'Serial entrepreneur met 12+ jaar ervaring in automotive, mobiliteitshandel, e-commerce, re-commerce en technologieplatforms.',
+    'team.arvin.bio2':
+      'Arvin heeft zijn carrière dicht bij de markt doorgebracht, werkend met voertuiginventaris, prijzen, sourcing en digitale handelsstromen.',
+    'team.christian.bio1':
+      'Achtergrond in het bouwen en schalen van techbedrijven in finance, SaaS en platformbedrijven.',
+    'team.christian.bio2':
+      'Christian heeft nauw samengewerkt met oprichters en leidinggevende teams aan financiële strategie, fundraising en scale-up operaties.',
+    'team.marc.bio1':
+      'Achtergrond in software engineering, data en toegepaste AI, met ervaring in investeren en technologiegedreven bedrijven.',
+    'team.marc.bio2':
+      'Marc heeft hands-on gewerkt met complexe datasets, het bouwen van datasystemen en intelligentielagen die echte operationele beslissingen ondersteunen.',
+    'team.machiel.bio1':
+      'Meer dan een decennium leiderschapservaring in digitale platforms en grootschalige e-commerceomgevingen.',
+    'team.machiel.bio2':
+      'Machiel heeft complexe organisaties geleid en geschaald, waaronder als CEO van een hooggroei marktplaatsbedrijf.',
+    'team.jingwei.bio1':
+      'Achtergrond in product, service design en gebruikersgerichte systeemontwikkeling.',
+    'team.jingwei.bio2':
+      'Jingwei heeft gewerkt aan het ontwerpen en vormgeven van digitale platforms waar complexiteit moet worden vertaald naar duidelijkheid voor eindgebruikers.',
+
+    'footer.tagline': 'Bringing agentic AI',
+    'footer.taglineSub': 'to automotive trading',
+    'footer.productCompany': 'Product / Bedrijf',
+    'footer.followUs': 'Volg Ons',
+    'footer.copyright': '© 2026 VEIQ. Alle rechten voorbehouden.',
+    'footer.privacy': 'Privacybeleid',
+    'footer.terms': 'Servicevoorwaarden',
+    'footer.imprint': 'Colofon',
+
+    'waitlist.title': 'Demo aanvragen',
+    'waitlist.description': "Krijg een persoonlijke demo van VEIQ's AI automotive intelligentie.",
+    'waitlist.companyPlaceholder': 'Jouw Bedrijfsnaam',
+    'waitlist.emailPlaceholder': 'jouw.email@bedrijf.nl',
+    'waitlist.phonePlaceholder': '+31 6 12345678',
+    'waitlist.submit': 'Demo aanvragen',
+    'waitlist.note':
+      'We delen je gegevens nooit. We nemen binnenkort contact op om je demo in te plannen.',
+
+    'ai.placeholder': 'Vraag Marvin alles...',
+  },
+}
