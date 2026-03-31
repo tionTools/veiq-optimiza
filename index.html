@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+  <meta property="og:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+  <meta property="og:description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/heros/mock_hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VEIQ - Real-time AI Intelligence for Automotive Professionals">
+  <meta name="twitter:description" content="VEIQ brings real-time AI intelligence to automotive trading. See the best deals, margins, and market data—so dealers buy better cars and make more, in less time.">
+  <title>VEIQ - Real-time AI Intelligence for Automotive Professionals</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+  <meta name="msapplication-TileColor" content="#0057B7">
+  <meta name="theme-color" content="#0057B7">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    (function() {
+      var hour = new Date().getHours();
+      var isDayTime = hour >= 9 && hour < 19;
+      var manualOverride = localStorage.getItem('theme-manual-override');
+      var savedTheme = localStorage.getItem('theme');
+      var theme = (manualOverride === 'true') ? (savedTheme || 'dark') : (isDayTime ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js"></script>
+  <script src="/js/analytics.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>
